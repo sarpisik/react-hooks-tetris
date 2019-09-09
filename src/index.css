@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
 }
@@ -5,4 +9,36 @@ body {
 @font-face {
   font-family: 'Pixel';
   src: url('font/Pixel-LCD-7.woff') format('woff');
+}
+
+.tetris {
+  flex-direction: column;
+}
+.display {
+  width: 50%;
+}
+.left-arrow {
+  transform: rotate(180deg);
+}
+.left-arrow:active {
+  transform: rotate(180deg) translateY(-4px);
+}
+button:active {
+  transform: translateY(4px);
+}
+
+@media only screen and (orientation: landscape) {
+  .tetris {
+    flex-direction: row;
+  }
+  .board {
+    flex-direction: column;
+  }
+  .display {
+    width: inherit;
+  }
+  .stage {
+    margin: 0 1rem;
+    max-width: 100vmin;
+  }
 }

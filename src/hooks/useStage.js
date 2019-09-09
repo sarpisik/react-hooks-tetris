@@ -7,6 +7,7 @@ export const useStage = (player, resetPlayer) => {
 
   useEffect(() => {
     setRowsCleared(0);
+
     const sweepRows = newStage =>
       newStage.reduce((initStage, row) => {
         if (row.findIndex(cell => cell[0] === 0) === -1) {
@@ -17,6 +18,7 @@ export const useStage = (player, resetPlayer) => {
         initStage.push(row);
         return initStage;
       }, []);
+
     const updateStage = prevStage => {
       // First flush the stage
       const newStage = prevStage.map(row =>
@@ -34,6 +36,7 @@ export const useStage = (player, resetPlayer) => {
           }
         });
       });
+
       // Then check if we got some score if collided
       if (player.collided) {
         resetPlayer();

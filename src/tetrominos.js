@@ -1,4 +1,5 @@
-const tetrominos = 'IJLOSTZ';
+const TETROMINOS = 'IJLOSTZ',
+  getRandomDigit = limit => Math.floor(Math.random() * limit);
 
 export const TETROMINOS_SHAPES = {
   0: { shape: [[0]], color: '0, 0, 0' },
@@ -22,8 +23,7 @@ export const TETROMINOS_SHAPES = {
 
 export const randomTetromino = () => {
   // Generate random tetromino.
-  const randTetromino =
-    tetrominos[Math.floor(Math.random() * tetrominos.length)];
+  const randTetromino = TETROMINOS[getRandomDigit(TETROMINOS.length)];
 
   return TETROMINOS_SHAPES[randTetromino];
 };

@@ -2,14 +2,17 @@ import { useState, useCallback } from 'react';
 import { TETROMINOS_SHAPES, randomTetromino } from '../tetrominos';
 import { STAGE_WIDTH, checkCollision } from '../gameHelpers';
 
+const INITIAL_PLAYER_SETTINGS = {
+  pos: { x: 0, y: 0 },
+  // Initial shape is blank.
+  tetromino: TETROMINOS_SHAPES[0].shape,
+  collided: false
+};
+
 export const usePlayer = () => {
-  // Hook
-  const [player, setPlayer] = useState({
-      pos: { x: 0, y: 0 },
-      // Initial shape.
-      tetromino: TETROMINOS_SHAPES[0].shape,
-      collided: false
-    }),
+  // Initial game settings.
+  const [player, setPlayer] = useState(INITIAL_PLAYER_SETTINGS),
+    // Event handlers
     rotate = (tetromino, dir) => {
       // Make the rows to become cols (transpose)
       const rotatedTetro = tetromino.map((_, index) =>
