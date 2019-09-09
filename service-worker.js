@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-hooks-tetris/precache-manifest.91a8f1a0cf59318889eeab4b3cb5e17e.js"
+  "/react-hooks-tetris/precache-manifest.97aa32d060989eecb491f759781dee7f.js"
 );
 
 self.addEventListener('message', (event) => {
