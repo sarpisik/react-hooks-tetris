@@ -3,7 +3,6 @@ import { createStage, checkCollision } from '../gameHelpers';
 
 // Components
 import Stage from './Stage';
-import StartButton from './StartButton';
 
 // Styled Components
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
@@ -14,7 +13,6 @@ import { useStage } from '../hooks/useStage';
 import { useInterval } from '../hooks/useInterval';
 import { useGameStatus } from '../hooks/useGameStatus';
 import Board from './Board';
-import Controllers from './Controllers';
 import Buttons from './Buttons';
 
 const GAME_BASE_SPEED = 1000;
